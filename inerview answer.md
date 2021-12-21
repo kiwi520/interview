@@ -62,13 +62,20 @@
 >
 > ​	ini_set('memory_limit', '400M');
 >
->    读取 sample.json 就是用的这个方式，因为整个json文件都在一行，无法使用fopen按行   yield fgets 读取文件，所以选择了加大临时内存配合file_get_contents读取的文件
+> 读取 sample.json 就是用的这个方式，因为整个json文件都在一行，无法使用fopen按行   yield fgets 读取文件，所以选择了加大临时内存配合file_get_contents读取的文件
 >
 > ​    2.yield异步处理(尤其对二进制文件 yield 分割读取)
 >
 > ​    3. 使用strem读取文件 stream_get_contents
 >
 > 导出是使用的yield 异步导出
+> 代码用laravel写的
+>
+> ```
+> Route::get('/toDb', 'JsonDataController@batchImport');
+> Route::get('/toExportJson', 'JsonDataController@exportJson');
+> ```
+>
 > [7.1导出的文件](https://drive.google.com/file/d/1MB-aD7US6W8SzosPHRZQmE3A9gn9rCsN/view?usp=sharing)
 
 #### 7.2在刚才创建的数据库上，写一条mySQL查询语句
