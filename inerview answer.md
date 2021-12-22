@@ -202,7 +202,7 @@
 
 
 
-# angluar部分面试题
+# angular部分面试题
 
 
 
